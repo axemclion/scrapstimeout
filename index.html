@@ -49,10 +49,11 @@
 							<span style = "font-size : 12px;color : #482917">
 								The images should be in the <u><b>JPEG format</b></u>	
 							</span>
-							<div>
-								<img id = "giftPreview" style = "display : none">
-							</div>
-							
+							<br>
+							<span>
+								Dimensions of your Gift Image
+								<input id = "giftImageWidth" style = "border:SOLID 1px #820004;padding:4px;" size = 3>&nbsp;x&nbsp;	<input id = "giftImageHeight" style = "border:SOLID 1px #820004;padding:4px;" size = 3>
+							</span>
 							<br><br><span style = "color : #820004">Personalized Message</span>
 							<ul style = "list-style : none">
 								<li>
@@ -200,15 +201,20 @@
 			window.setTimeout(updateFlash,4000);
 			giftPicker();
 			
+			var giftHeight = 0;
+			var giftWidth  = 0;
+			
 			function giftPicker()
 			{
-				var giftList = ["http://tinyurl.com/2ly8m7",
-				"http://tinyurl.com/32kn67",
-				"http://tinyurl.com/2ktn7c",
-				"http://tinyurl.com/36j3yt",
-				"http://tinyurl.com/3e4xkk",
-				"http://tinyurl.com/2qe27a",
-				"http://tinyurl.com/2mnror"];
+				var giftList = [
+				"http://farm3.static.flickr.com/2176/2128897076_9b90d5c415_m.jpg",
+				"http://farm3.static.flickr.com/2294/2128120975_b215d73221_m.jpg",
+				"http://farm3.static.flickr.com/2144/2128120705_deb979acb1_m.jpg",
+				"http://farm3.static.flickr.com/2203/2128120821_3be8a08408_m.jpg",
+				"http://farm3.static.flickr.com/2153/2128120929_0ac8cba392_m.jpg",
+				"http://farm3.static.flickr.com/2004/2128120571_5ff01f364a_m.jpg",
+				"http://farm3.static.flickr.com/2154/2129730577_13d6912aac_m.jpg"
+				];
 				
 				var docPos = "";
 				for (var i = 0; i < giftList.length; i++)
@@ -222,8 +228,7 @@
 			function selectGift(giftUrl)
 			{
 				document.getElementById("giftImage").value = giftUrl;
-				document.getElementById("applyButton").value = "..Loading image...";
-				document.getElementById("giftPreview").src = document.getElementById("giftImage").value;
+				showPreview();
 			}
 			
 			function setCurrentTime()
@@ -238,14 +243,27 @@
 			
 			function showPreview()
 			{
-				document.getElementById("giftPreview").src = document.getElementById("giftImage").value;				
 				document.getElementById("applyButton").value = "..Loading image...";
 				document.getElementById("applyButton").disabled = true;
-				document.getElementById("giftPreview").onload = function(imageLodedFlag)
-																{
-																	document.getElementById("applyButton").value = "Apply Settings and Preview";
-																	document.getElementById("applyButton").disabled = false;
-																}
+				var imgPreview = new Image();
+				imgPreview.src = document.getElementById("giftImage").value;
+				if (imgPreview.width > 0)
+				{
+					imageSizehandler(imgPreview);
+				}
+				else
+				{
+					imgPreview.onload = function(){imageSizehandler(imgPreview)};
+				}
+				
+			}
+			
+			function imageSizehandler(imgPreview)
+			{
+				document.getElementById("applyButton").value = "Apply Settings and Preview";
+				document.getElementById("applyButton").disabled = false;
+				document.getElementById("giftImageHeight").value = imgPreview.height;
+				document.getElementById("giftImageWidth").value = imgPreview.width;
 			}
 			
 			function updateFlash()
@@ -286,7 +304,8 @@
 					theme = 5;
 				}
 
-
+				giftHeight = parseInt(document.getElementById('giftImageHeight').value);
+				giftWidth = parseInt(document.getElementById('giftImageWidth').value);
 				
 				var giftUrl = document.getElementById("giftImage").value;
 				var greetingMessage = document.getElementById("greetingMessage").value;
@@ -301,9 +320,9 @@
 				var mins = document.getElementById("minsConfig").value;
 				
 				var flashVars = "gift=" + escape(giftUrl);
-				var imgHeight = document.getElementById("giftPreview").height;
-				var imgWidth = document.getElementById("giftPreview").width;
-								
+				var imgHeight = giftHeight > 0 ? giftHeight:240  ;//document.getElementById("giftPreview").height;
+				var imgWidth = giftWidth > 0 ? giftWidth : 240;//document.getElementById("giftPreview").width;
+				
 				flashVars += "&gw=" + imgWidth +"&gh=" + imgHeight;
 				
 				flashVars += "&start=" + escape(greetingMessage);
@@ -323,7 +342,7 @@
 						     + '<embed type=application/x-shockwave-flash '
 						     + 'width=' + flashFile[theme].width + ' height=' + flashFile[theme].height+ ' src=' + flashFile[theme].movie + ' '
 						     + 'flashvars=' + flashVars+ ''
-						     + '></embed></object><a style="padding:10px;border:1px SOLID BLACK" href="http://scraps.geekstimeout.com">Send this to your friends</a> '
+						     + '></embed></object><br><a style="padding:10px;border:1px SOLID BLACK" href="http://scraps.geekstimeout.com">Send this to your friends</a><br>'
 				
 				document.getElementById("scrapFlash").innerHTML = "<center>" + docPos + "</center>";
 				document.getElementById("scrapSource").value = docPos;
@@ -336,6 +355,17 @@
 				{
 					document.getElementById("orkutWarning").style.display = "none";
 				}
+			}
+			
+			
+			function getStyle(el,styleProp)
+			{
+				var x = document.getElementById(el);
+				if (x.currentStyle)
+					var y = x.currentStyle[styleProp];
+				else if (window.getComputedStyle)
+					var y = document.defaultView.getComputedStyle(x,null).getPropertyValue(styleProp);
+				return y;
 			}
 		</script>
 		
