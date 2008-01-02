@@ -252,7 +252,7 @@
 			{
 					var currentTime = new Date();
 					document.getElementById("dateConfig").value = currentTime.getDate();
-					document.getElementById("monthConfig").value = currentTime.getDate();
+					document.getElementById("monthConfig").value = currentTime.getMonth();
 					document.getElementById("yearConfig").value = currentTime.getFullYear();
 					document.getElementById("hourConfig").value = currentTime.getHours();
 					document.getElementById("minsConfig").value = currentTime.getMinutes() + 1;
@@ -333,7 +333,7 @@
 				var flashHeight = 215; var flashWidth = 600;
 				
 				var year = document.getElementById("yearConfig").value;
-				var month = 11;
+				var month = document.getElementById("monthConfig").value;
 				var date = document.getElementById("dateConfig").value;
 				var hour = document.getElementById("hourConfig").value;
 				var mins = document.getElementById("minsConfig").value;
