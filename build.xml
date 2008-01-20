@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!-- ====================================================================== 
+     Jan 17, 2008 10:33:59 PM                                                        
+
+     ScrapsTimeOut    
+     Sending Orkut Scraps to friends
+                   
+     narasp                                                                
+     ====================================================================== -->
+<project name="ScrapsTimeOut" default="server.deploy">
+    <description>
+            Sending Orku Scraps to friends
+    </description>
+
+	<property name="out.dir" value="${basedir}/out"/>
+	<property name="html.dir" value="${basedir}/html"/>
+	
+	<property name="swf.dir" value="${basedir}/swf"/>
+	<property name="swf.assets.dir" value="${swf.dir}/assets"/>
+	<property name="swf.bin.dir" value="${swf.dir}/bin"/>
+	
+    <!-- ================================= 
+          target: deploy              
+         ================================= -->
+    <target name="compile" depends="prepare" description="--> Sending Orkut Scraps to friends">
+        <copy todir="${out.dir}" verbose="true">
+        	<fileset dir="${html.dir}" includes="**/*"/>
+        	<fileset dir="${swf.assets.dir}" includes="**/*"/>
+        	<fileset dir="${swf.bin.dir}" includes="**/*"/>	
+    	</copy>
+    </target>
+
+    <target name="prepare">
+    	<mkdir dir="${out.dir}"/>
+    </target>
+
+	<target name="server.deploy" depends = "compile">
+		<property name="server.location" value="C:\Program Files\Apache Software Foundation\Tomcat 6.0\webapps\ROOT\scrapstimeout"/>
+		<mkdir dir="${server.location}"/>
+		<copy todir="${server.location}">
+			<fileset dir="${out.dir}" includes="**/*" />
+		</copy>
+	</target>
+	
+</project>
