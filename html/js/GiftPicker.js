@@ -1,7 +1,7 @@
 
 var GiftPicker = 
 {
-	/*var giftList = [
+	giftList : [
 	{"image":"http://tinyurl.com/2ly8m7"},
 	{"image":"http://tinyurl.com/32kn67"},
 	{"image":"http://tinyurl.com/2ktn7c"},
@@ -9,27 +9,8 @@ var GiftPicker =
 	{"image":"http://tinyurl.com/39gpv9"},
 	{"image":"http://tinyurl.com/2qe27a"},
 	{"image":"http://tinyurl.com/2mnror"}
-	];*/
-
-	giftList : [
-		{"image" : "birthday1.jpg"},
-		{"image" : "birthday2.jpg"},
-		{"image" : "birthday3.jpg"},
-		{"image" : "birthday4.jpg"},
-		{"image" : "birthday1.jpg"},
-		{"image" : "birthday2.jpg"},
-		{"image" : "birthday3.jpg"},
-		{"image" : "birthday4.jpg"},
-		{"image" : "birthday1.jpg"},
-		{"image" : "birthday2.jpg"},		
-		{"image" : "birthday3.jpg"},
-		{"image" : "birthday4.jpg"},
-		{"image" : "birthday1.jpg"},
-		{"image" : "birthday2.jpg"},
-		{"image" : "birthday3.jpg"},
-		{"image" : "birthday4.jpg"}
 	],
-	
+
 	init : function(giftPane)
 	{
 		this.giftPane = document.getElementById(giftPane);
