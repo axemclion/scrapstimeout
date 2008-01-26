@@ -2,15 +2,40 @@
 var GiftPicker = 
 {
 	giftList : [
+	{"image":"http://tinyurl.com/36j3yt"},
+	{"image":"http://tinyurl.com/236dxr"},
+	{"image":"http://tinyurl.com/ys7q3z"},
+	{"image":"http://tinyurl.com/2xhsco"},
+	{"image":"http://tinyurl.com/yrq6my"},
+	{"image":"http://tinyurl.com/2gctow"},
 	{"image":"http://tinyurl.com/2ly8m7"},
 	{"image":"http://tinyurl.com/32kn67"},
 	{"image":"http://tinyurl.com/2ktn7c"},
-	{"image":"http://tinyurl.com/36j3yt"},
-	{"image":"http://tinyurl.com/39gpv9"},
 	{"image":"http://tinyurl.com/2qe27a"},
-	{"image":"http://tinyurl.com/2mnror"}
+	{"image":"http://tinyurl.com/2e2a6h"},
+	{"image":"http://tinyurl.com/yr9ep7"},
+	{"image":"http://tinyurl.com/2gctow"},
+	{"image":"http://tinyurl.com/yo6amk"},
+	{"image":"http://tinyurl.com/23zrxy"},
+	{"image":"http://tinyurl.com/2zjrvz"},
+	{"image":"http://tinyurl.com/yt938y"},
+	{"image":"http://tinyurl.com/2hgcbp"},
+	{"image":"http://tinyurl.com/yu5942"},
+	{"image":"http://tinyurl.com/yq5w5e"},
+	{"image":"http://tinyurl.com/23q3nq"},
+	{"image":"http://tinyurl.com/24gr2x"},
+	{"image":"http://tinyurl.com/ypq6ts"},
+	{"image":"http://tinyurl.com/yofeja"},
+	{"image":"http://tinyurl.com/23ruto"},
+	{"image":"http://tinyurl.com/2bqt3c"},
+	{"image":"http://tinyurl.com/2cnywd"},
+	{"image":"http://tinyurl.com/2xazlw"},
+	{"image":"http://tinyurl.com/2ylawh"},
+	{"image":"http://tinyurl.com/2ag3pr"},
+	{"image":"http://tinyurl.com/ysf2ra"},
+	{"image":"http://tinyurl.com/2cy5r4"}
 	],
-
+	
 	init : function(giftPane)
 	{
 		this.giftPane = document.getElementById(giftPane);
@@ -50,28 +75,27 @@ var GiftPicker =
 		{
 			docPos += "<img src = '"+ this.giftList[i].image + "' style = 'border : SOLID 1px GREY; width : 70px; height : 70px; cursor : pointer' onclick = 'GiftPicker.selectGift(" + i +  ")'>&nbsp;";
 		}
-		giftPickerPane.style.width = (this.giftList.length) * 77 + "px";
+		giftPickerPane.style.width = (this.giftList.length) * 76 + "px";
 		giftPickerPane.innerHTML = docPos;
-		giftPickerPane.style.position = "relative";		
+		giftPickerPane.style.left = "0px";
 	},
 	
 	startScroll : function(amount)
 	{
 		var paneWidth = parseInt(YAHOO.util.Dom.getStyle(this.giftPane,"width"));
-		var paneLeft = parseInt(YAHOO.util.Dom.getStyle(this.giftPane,"left"));
+		var paneLeft = parseInt(document.getElementById("giftScrollerPane").scrollLeft);
 		var parentWidth = parseInt(YAHOO.util.Dom.getStyle(this.giftPane.parentNode,"width"));
-
 		var min = 0;
-		var max = parentWidth - paneWidth;
+		var max = paneWidth - parentWidth;
 		var time = paneLeft - (amount < 0 ? min:max);
-		time = (time < 0 ? -time:time)/100;
+		time = (time < 0 ? -time:time)/150;
 		
 		this.stopScroll();	
 		var attributes = 
 		{
-			left: {to: amount < 0 ? min : max}
+			scroll: {to: [amount < 0 ? min : max, 0]}
 		};
-		this.scrollAnimHandler = new YAHOO.util.Anim('giftPickerPane', attributes, time, YAHOO.util.Easing.easeNone);
+		this.scrollAnimHandler = new YAHOO.util.Scroll('giftScrollerPane', attributes, time, YAHOO.util.Easing.easeNone);
 		this.scrollAnimHandler.animate();
 		
 	},
