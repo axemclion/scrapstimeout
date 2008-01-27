@@ -73,11 +73,21 @@ var GiftPicker =
 		var docPos = "";
 		for (var i = 0; i < this.giftList.length; i++)
 		{
-			docPos += "<img src = '"+ this.giftList[i].image + "' style = 'border : SOLID 1px GREY; width : 70px; height : 70px; cursor : pointer;	background-image : url(\"img/loading.gif\");' onclick = 'GiftPicker.selectGift(" + i +  ")'>&nbsp;";
+			docPos += "<img id = '_gift_item_" + i +  "' src = 'img/loading.gif' style = 'border : SOLID 1px GREY; width : 70px; height : 70px; cursor : pointer;	background-image : url(\"img/loading.gif\");' onclick = 'GiftPicker.selectGift(" + i +  ")'>&nbsp;";
 		}
 		giftPickerPane.style.width = (this.giftList.length) * 76 + "px";
 		giftPickerPane.innerHTML = docPos;
 		giftPickerPane.style.left = "0px";
+		YAHOO.util.Event.addListener(window,"load",this.setGiftImages,this, true);
+	},
+	
+	setGiftImages : function(giftPickerPane)
+	{
+		console.log(this);
+		for (var i = 0; i < this.giftList.length; i++)
+		{
+			document.getElementById("_gift_item_" + i).src = this.giftList[i].image;
+		}
 	},
 	
 	startScroll : function(amount)
