@@ -83,7 +83,6 @@ var GiftPicker =
 	
 	setGiftImages : function(giftPickerPane)
 	{
-		console.log(this);
 		for (var i = 0; i < this.giftList.length; i++)
 		{
 			document.getElementById("_gift_item_" + i).src = this.giftList[i].image;
