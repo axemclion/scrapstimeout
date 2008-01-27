@@ -1,3 +1,10 @@
+body
+{
+	background-color : #5A431E;
+	margin : 0px;
+	padding : 0px;
+}
+
 a
 {
 	text-decoration:none; 
@@ -12,7 +19,6 @@ a:hover
 
 .main-div
 {
-	background-color : BLACK; 
 	margin : 0px; 
 	padding : 0px; 
 	color : #482917; 
@@ -22,23 +28,29 @@ a:hover
 
 .header-div
 {
-	width : 900px; 
-	background-image : url('../img/header.jpg'); 
-	height : 267px;
+	width : 700px; 
+	background-color : #F0E4D2;
+	border : SOLID 2px #BC8636;
+	text-align : center;
+	-moz-border-radius-topleft : 25px;
+	-moz-border-radius-topright : 25px;	
 }
 
 .footer-div
 {
-	width : 900px; 
-	background-image : url('../img/footer.jpg');
-	height : 60px;
+	width : 700px;
+	background-color : #F0E4D2;
+	border-bottom : SOLID 2px #BC8636;
+	border-left : SOLID 2px #BC8636;
+	border-right : SOLID 2px #BC8636;
 }
 
 .content-div
 {
-	width : 900px; 
-	background-image : url('../img/center.jpg');
-	background-repeat:repeat-y;
+	width : 700px; 
+	background-color : #F0E4D2;
+	border-left : SOLID 2px #BC8636;
+	border-right : SOLID 2px #BC8636;
 }
 
 .banner-arrow
@@ -51,12 +63,15 @@ a:hover
 
 .banner-sign
 {
-	background-image: url('../img/banner3.png');
 	width :120px;
 	height : 55px;
 	float:left;
 	padding : 10px;
-	text-align:center
+	text-align:center;
+	border : #AB0104 SOLID 3px;
+	background-color : #BF8F41;
+	-moz-border-radius : 10px;
+	
 }
 
 .banner-hilite
