@@ -159,8 +159,9 @@
                             <div align = "center" style ="font-size : 16px; font-weight : bold; color : #AB0104">
                                 Copy the following code, and paste it in the scrap book of your friend
                                 <br/>
-                                <textarea id = "scrapSource" style ="width : 100%" rows = "4" style ="border : SOLID 1px #820004; padding : 2px;">
-                                </textarea>
+                                <form action = "mailPage.php">
+									<textarea name = "scrapSource" id = "scrapSource" style ="width : 100%" rows = "4" style ="border : SOLID 1px #820004; padding : 2px;"></textarea>
+								</form>
                             </div>
                             <div style ="" id = "orkutWarning">
                                 Warning : Orkut only accepts scraps with length less that 1024 characters. 
@@ -168,6 +169,22 @@
                                 <br/>
                                 To shorten the gift image URls you could use <a href = "http://tinyurl.com">tinyurl.com</a>
                             </div>
+							<br /> 
+							<br />
+							<div id = "sendMail" >
+								<div  align = "center" style ="font-size : 16px; font-weight : bold; color : #AB0104; width : 100%">
+									Or send this as an email to your friends &nbsp;&nbsp; <input id="downloadButton" type = "button" style ="color : #FFFFFF ; font-weight : bold; padding : 5px ; background-color : #AB0104" value = "Download for Email Attatchment">
+								</div>
+								<div>
+									<ol>
+										<li>Download the file and save it to your computer</li>
+										<li>Attatch it to an email</li>
+										<li>The reciever will see the virtual gift that will open at the specified time</li>
+									</ol>
+								</div>
+								<iframe name = "mailFrame" style = "display:none">
+								</iframe>
+							</div>
                         </div>
                     </div>
                 </div>

@@ -30,8 +30,8 @@ var ScrapsTimeout =
 	
 	associateEvents : function()
 	{
-
 		YAHOO.util.Event.addListener("applyButton", "click", this.updateFlash, null, this);
+		YAHOO.util.Event.addListener("downloadButton", "click", this.downloadFromMail, null, this);
 		YAHOO.util.Event.addListener("scrapSource", "click", function(){document.getElementById('scrapSource').select()});		
 	},
 	
@@ -80,7 +80,17 @@ var ScrapsTimeout =
 				     + 'flashvars=' + flashVars+ ''
 				     + '></embed></object><br><a style="padding:2px;border:SOLID 1px BLACK" href="http://scraps.geekstimeout.com">Send this to your friends</a><br>'
 		return docPos;		
+	},
+	
+	downloadFromMail : function()
+	{
+		if (document.getElementById('scrapSource').value.length == 0)
+		{
+			this.updateFlash();
+		}
+		document.forms[0].submit();
 	}
+
 	
 };
 
