@@ -6,36 +6,36 @@ var ThemePicker =
 			'category' : 'Birthdays',
 			'movies' :
 			[
-					{'name':'Happy Birthday 1','movie' : 'http://scraps.geekstimeout.com/birthday1.swf', 'width' : '600', 'height': '215', 'preview' : 'birthday1.jpg'},
-					{'name':'Happy Birthday 2','movie' : 'http://scraps.geekstimeout.com/birthday2.swf', 'width' : '600', 'height': '215', 'preview' : 'birthday2.jpg'},
-					{'name':'Birthday Wishes 3','movie' : 'http://scraps.geekstimeout.com/birthday3.swf', 'width' : '600', 'height': '215', 'preview' : 'birthday3.jpg'},
-					{'name':'Birthday Wishes 4','movie' : 'http://scraps.geekstimeout.com/birthday4.swf', 'width' : '600', 'height': '215', 'preview' : 'birthday4.jpg'}
+					{'name':'Happy Birthday 1','movie' : 'http://scraps.geekstimeout.com/birthday1.swf', 'width' : '600', 'height': '215', 'preview' : 'http://scraps.geekstimeout.com/birthday1.jpg'},
+					{'name':'Happy Birthday 2','movie' : 'http://scraps.geekstimeout.com/birthday2.swf', 'width' : '600', 'height': '215', 'preview' : 'http://scraps.geekstimeout.com/birthday2.jpg'},
+					{'name':'Birthday Wishes 3','movie' : 'http://scraps.geekstimeout.com/birthday3.swf', 'width' : '600', 'height': '215', 'preview' : 'http://scraps.geekstimeout.com/birthday3.jpg'},
+					{'name':'Birthday Wishes 4','movie' : 'http://scraps.geekstimeout.com/birthday4.swf', 'width' : '600', 'height': '215', 'preview' : 'http://scraps.geekstimeout.com/birthday4.jpg'}
 			]
 		},
 		{
 			'category' : 'Valentine\'s Day',
 			'movies' :
 			[
-				{'name':'Golden Heart','movie' : 'http://scraps.geekstimeout.com/general.swf?bg=http://scraps.geekstimeout.com/valentine1.jpg&', 'width' : '600', 'height': '215', 'preview' : 'valentine1.jpg'},
-				{'name':'Prepared for the Valentine','movie' : 'http://scraps.geekstimeout.com/general.swf?bg=http://scraps.geekstimeout.com/valentine2.jpg&', 'width' : '600', 'height': '215', 'preview' : 'valentine2.jpg'},
-				{'name':'For that special person','movie' : 'http://scraps.geekstimeout.com/general.swf?bg=http://scraps.geekstimeout.com/valentine3.jpg&', 'width' : '600', 'height': '215', 'preview' : 'valentine3.jpg'},
-				{'name':'He and She','movie' : 'http://scraps.geekstimeout.com/general.swf?bg=http://scraps.geekstimeout.com/valentine4.jpg&', 'width' : '600', 'height': '215', 'preview' : 'valentine4.jpg'}
+				{'name':'Golden Heart','movie' : 'http://scraps.geekstimeout.com/general.swf?bg=http://scraps.geekstimeout.com/valentine1.jpg&', 'width' : '600', 'height': '215', 'preview' : 'http://scraps.geekstimeout.com/valentine1.jpg'},
+				{'name':'Prepared for the Valentine','movie' : 'http://scraps.geekstimeout.com/general.swf?bg=http://scraps.geekstimeout.com/valentine2.jpg&', 'width' : '600', 'height': '215', 'preview' : 'http://scraps.geekstimeout.com/valentine2.jpg'},
+				{'name':'For that special person','movie' : 'http://scraps.geekstimeout.com/general.swf?bg=http://scraps.geekstimeout.com/valentine3.jpg&', 'width' : '600', 'height': '215', 'preview' : 'http://scraps.geekstimeout.com/valentine3.jpg'},
+				{'name':'He and She','movie' : 'http://scraps.geekstimeout.com/general.swf?bg=http://scraps.geekstimeout.com/valentine4.jpg&', 'width' : '600', 'height': '215', 'preview' : 'http://scraps.geekstimeout.com/valentine4.jpg'}
 			]			
 		},
 		{
 			'category' : 'New Year Greetings',
 			'movies' :
 			[
-				{'name':'New Year - Theme 1','movie' : 'http://scraps.geekstimeout.com/general.swf?bg=http://scraps.geekstimeout.com/newyear1.jpg&', 'width' : '600', 'height': '215', 'preview' : 'newyear1.jpg'},
-				{'name':'New Year - Theme 2','movie' : 'http://scraps.geekstimeout.com/general.swf?bg=http://scraps.geekstimeout.com/newyear2.jpg&', 'width' : '600', 'height': '215', 'preview' : 'newyear2.jpg'}
+				{'name':'New Year - Theme 1','movie' : 'http://scraps.geekstimeout.com/general.swf?bg=http://scraps.geekstimeout.com/newyear1.jpg&', 'width' : '600', 'height': '215', 'preview' : 'http://scraps.geekstimeout.com/newyear1.jpg'},
+				{'name':'New Year - Theme 2','movie' : 'http://scraps.geekstimeout.com/general.swf?bg=http://scraps.geekstimeout.com/newyear2.jpg&', 'width' : '600', 'height': '215', 'preview' : 'http://scraps.geekstimeout.com/newyear2.jpg'}
 			]			
 		},
 		{
 			'category' : 'Christmas Greetings',
 			'movies' :
 			[
-				{'name':'Merry Christmas','movie' : 'http://scraps.geekstimeout.com/christmas1.swf', 'width' : '600', 'height': '215', 'preview' : 'christmas.jpg' },
-				{'name':'Happy Carols','movie' : 'http://scraps.geekstimeout.com/christmas2.swf', 'width' : '488', 'height': '318', 'preview' : 'christmas2.jpg'}
+				{'name':'Merry Christmas','movie' : 'http://scraps.geekstimeout.com/christmas1.swf', 'width' : '600', 'height': '215', 'preview' : 'http://scraps.geekstimeout.com/christmas.jpg' },
+				{'name':'Happy Carols','movie' : 'http://scraps.geekstimeout.com/christmas2.swf', 'width' : '488', 'height': '318', 'preview' : 'http://scraps.geekstimeout.com/christmas2.jpg'}
 			]			
 		}
 	],

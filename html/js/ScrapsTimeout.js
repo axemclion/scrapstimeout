@@ -67,6 +67,7 @@ var ScrapsTimeout =
 
 		document.getElementById("scrapFlash").innerHTML = docPos;
 		document.getElementById("scrapSource").value = docPos;
+		document.getElementById("scrapPreview").value = ThemePicker.currentTheme.preview;
 	},
 	
 	getFlashSource : function(theme, flashVars)
