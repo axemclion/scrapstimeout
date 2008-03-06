@@ -3,6 +3,16 @@ var ThemePicker =
 	theme:
 	[
 		{
+			'category' : 'General',
+			'movies' :
+			[
+				{'name':'Blank Theme','movie' : 'http://scraps.geekstimeout.com/general.swf?bg=http://scraps.geekstimeout.com/blank.jpg&', 'width' : '600', 'height': '215', 'preview' : 'http://scraps.geekstimeout.com/blank.jpg'},
+				{'name':'Royal Stars','movie' : 'http://scraps.geekstimeout.com/general.swf?bg=http://scraps.geekstimeout.com/general1.jpg&', 'width' : '600', 'height': '215', 'preview' : 'http://scraps.geekstimeout.com/general1.jpg'},
+				{'name':'Lanterns','movie' : 'http://scraps.geekstimeout.com/general.swf?bg=http://scraps.geekstimeout.com/general2.jpg&', 'width' : '600', 'height': '215', 'preview' : 'http://scraps.geekstimeout.com/general2.jpg'},
+				{'name':'Flowers','movie' : 'http://scraps.geekstimeout.com/general.swf?bg=http://scraps.geekstimeout.com/general3.jpg&', 'width' : '600', 'height': '215', 'preview' : 'http://scraps.geekstimeout.com/general3.jpg'},
+			]
+		},
+		{
 			'category' : 'Birthdays',
 			'movies' :
 			[
