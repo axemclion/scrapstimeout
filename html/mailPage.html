@@ -1,6 +1,3 @@
-<?
-	header("Content-disposition: attachment; filename=mail.html");
-?>
 <html>
 	<head>
 	</head>
@@ -14,10 +11,10 @@
 			<div align = "center" style = "width:100%; padding : none">
 				<div id = "swfPreview">
 					Preview <br/>
-					<img src = "<?php echo $scrapPreview; ?>">
+					<img src = "__scrapPreview__">
 				</div>
 				<div id = "swfContent" style = "display : none; background-color : #FFFFFF; width : 90%; padding : 10px">
-					<?php echo $scrapSource; ?>
+					__scrapSource__>
 				</div>
 			</div>
 			<br/><br/>
