@@ -48,7 +48,8 @@ STO.Views.send = new (Backbone.View.extend({
                     name: "Here is a surprise for you !!",
                     caption: STO.giftConfig.get("msg").start,
                     description: 'Using Dialogs to interact with users.',
-                    to: STO.giftConfig.get("friend").uid
+                    to: STO.giftConfig.get("friend").uid,
+					source: url
                 }, function(response){
                     if (response) {
                         STO.go("done");
