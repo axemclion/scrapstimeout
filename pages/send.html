@@ -1,0 +1,40 @@
+<div id = "send">
+    <div class = "header">
+        <h1>Post on facebook wall</h1>
+    </div>
+    <div class = "content">
+        <div class = "swfpreview">
+        </div>
+        <div class = "buttons">
+            <a class = "btn previous">&lsaquo;&lsaquo; Pick another gift</a>
+            <a class = "btn btn-primary post">Send to your friend !</a>
+        </div>
+    </div>
+    <div class = "swfpreviewTemplate hide">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="{{ width }}" height="{{ height }}">
+            <param name="movie" value="{{ swf }}">
+            <embed type="application/x-shockwave-flash" width="{{ width }}" height="{{ height }}" src="{{ swf }}">
+            </embed>
+        </object>
+    </div>
+    <div class="modal fade hide" id="noFBWallPost">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+                ×
+            </button>
+            <h3>Posting to facebook wall cancelled</h3>
+        </div>
+        <div class="modal-body">
+            <p>
+                <strong>Are you sure you do not want to post to your friend's wall ? </strong>
+                They are gonna love your surprise - and they won't know what it is, till the time you want ! Send it to them, it will be fun !
+            </p>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn" data-dismiss="modal">Close</a>
+            <a href="#" class="btn btn-primary post">Post to wall</a>
+        </div>
+    </div>
+    <script src = "js/views/send.js" type = "text/javascript">
+    </script>
+</div>

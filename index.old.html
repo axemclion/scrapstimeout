@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1" />
+        <meta content=text/html/>
+        <title>ScrapsTimeout :: Send personalized scraps to orkut</title>
+        <link rel="stylesheet" href="css/scraps.css"/>
+    </head>
+    <body>
+        <br/>
+        <br/>
+        <br/>
+        <div align = "center" class = "main-div">
+            <div class = "header-div">
+                <div style ="padding : 10px">
+                    <img src = "img/logo.png"/>
+                </div>
+            </div>
+            <div class = "content-div">
+                <div style ="width : 600px;" align = "left">
+                    <div style ="width : 100%; text-align : justify; padding : 10px;">
+                        <div align = "center">
+                            Send free personalized gifts as orkut scraps this season, all in <span style ="font-size : 18px; color : #820004">3 easy </span>steps.
+                            <br/>
+                            <br/>
+                            <div class = "container-div" style ="padding : 5px;">
+                                <div class = "banner-sign">
+                                    Personalize your
+                                    <br/>
+                                    <span class = "banner-hilite">Gift</span>
+                                </div>
+                                <div class = "banner-arrow">
+                                    &nbsp;
+                                </div>
+                                <div class = "banner-sign">
+                                    Set gift opening
+                                    <br/>
+                                    <span class = "banner-hilite">Time</span>
+                                </div>
+                                <div class = "banner-arrow">
+                                    &nbsp;
+                                </div>
+                                <div class = "banner-sign">
+                                    Copy code to
+                                    <br/>
+                                    <span class = "banner-hilite">Orkut</span>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <hr/>
+                        <div id = "giftPane">
+                            <span class = "section-title">What do you want to gift ? </span>
+                            <br/>
+                            <div style ="padding : 15px">
+                                <span class = "label-text">Select a gift</span>
+                                <div class = "container-div">
+                                    <div class = "scroll-arrow" id = 'giftLeftArrow'>
+                                        <img src = 'img/left-arrow.png'/>
+                                    </div>
+                                    <div class = "scroll-pane" id = "giftScrollerPane">
+                                        <div id = "giftPickerPane" style ="height:100%;top : 3px;">
+                                        </div>
+                                    </div>
+                                    <div class = "scroll-arrow" id = 'giftRightArrow'>
+                                        <img src = 'img/right-arrow.png'/>
+                                    </div>
+                                </div>
+                                <br/>
+                                <span class = "message-text">or use URL of the image from the internet</span>
+                                <br/>
+                                <input type = "text" name = "giftImage" id = "giftImage" class = "text-box" style ="width : 95%"/>
+                                <br/>
+                                <div id = "jpeg-error" style ="font-size : 12px; width : 95%; text-align : right; padding-bottom:5px" class = "label-text">
+                                    The images should be in the 
+                                    <u>
+                                        <b>JPEG format</b>
+                                    </u>
+                                </div>
+                                <span>Dimensions of your Gift Image<input id = "giftImageWidth" class = "text-box" size = "3"/>&nbsp;x&nbsp;<input id = "giftImageHeight" class = "text-box" size = "3"/></span>
+                                <br/>
+                                <br/>
+                                <span class = "label-text">Personalized Message</span>
+                                <ul style ="list-style : none;">
+                                    <li>
+                                        <div>
+                                            Before opening the gift
+                                        </div>
+                                        <input type = "text" name = "greetingMessage" id = "greetingMessage" class = "text-box" style ="width:80%" value = "Here is a surprise for you, specially from me !! "/>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            After  opening the gift
+                                        </div>
+                                        <input type = "text" name = "teaserMessage" id = "teaserMessage" class="text-box" style ="width:80%" value = "Did you like my gift ?"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id = "timePane">
+                            <span class = "section-title">When do you want to allow the person to open the gift ? </span>
+                            <ul style ="list-style : none">
+                                <li>
+                                    <input type = "radio" id = "timeSpecific" name = "time" checked = "true"/>The gift can only be opened at 
+                                    <div id = "timeDiv" style ="padding-left : 30px;" class ="label-text">
+                                        Date : <input type = "text" id = "dateConfig" value = "22" size = "2" style ="border : SOLID 1px #820004; padding : 4px;"/>
+                                        <select id = "monthConfig" style ="border : SOLID 1px #820004; padding : 3px;">
+                                            <option value = "0">January</option>
+                                            <option value = "1">February</option>
+                                            <option value = "2">March</option>
+                                            <option value = "3">April</option>
+                                            <option value = "4">May</option>
+                                            <option value = "5">June</option>
+                                            <option value = "6">July</option>
+                                            <option value = "7">August</option>
+                                            <option value = "8">September</option>
+                                            <option value = "9">October</option>
+                                            <option value = "10">November</option>
+                                            <option value = "11" selected = "selected">December</option>
+                                        </select>
+                                        <input type = "text" id = "yearConfig" value = "2007" size = "4" style ="border : SOLID 1px #820004; padding : 4px;"/>
+                                        <div style ="height : 4px">
+                                        </div>
+                                        Time : <input type = "text" size = "2" id = "hourConfig" value = "14" style ="border : SOLID 1px #820004; padding : 2px;">: <input type = "text" size = "2" id = "minsConfig" value = "14" style ="border : SOLID 1px #820004; padding : 2px;" size = "2"/>hrs 
+                                        &nbsp; <span>[24 hour format]</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <input type = "radio" id = "timeNone" name = "time"/>Any time 
+                                </li>
+                            </ul>
+                        </div>
+                        <div id = "themePane">
+                            <span class = "section-title">Scrap Theme</span>
+                            <span style ="font-size : 10px">[ We are working on getting more themes for you ]</span>
+                            <br/>
+                            <br/>
+                            <div class = "container-div">
+                                <div id = "themeDiv" style ="float:left; width : 40%">
+                                </div>
+                                <div id = "themePreview" style ="float : left; width : 55%" class = "preview-pane">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div align = "center" style ="padding : 5px ; color : #FFFFFF">
+                            <input type = "button" id = "applyButton" style ="color : #FFFFFF ; font-weight : bold; padding : 5px ; background-color : #AB0104" value = "Apply Settings and Preview"/>
+                        </div>
+                        <br/>
+                        <hr/>
+                        <div id = "previewPane">
+                            <span style ="width : 100%">Preview of the scrap</span>
+                            <div id = "scrapFlash" class = "preview-pane">
+                                Click on Apply Settings and Preview 
+                            </div>
+                            <br/>
+                            <br/>
+                            <div align = "center" style ="font-size : 16px; font-weight : bold; color : #AB0104">
+                                Copy the following code, and paste it in the scrap book of your friend
+                                <br/>
+                                <div>
+                                    <textarea name = "scrapSource" id = "scrapSource" style ="width : 100%" rows = "4" style ="border : SOLID 1px #820004; padding : 2px;">
+                                    </textarea>
+                                    <input type = "hidden" name = "scrapPreview" id = "scrapPreview">
+                                </div>
+                            </div>
+                            <div style ="" id = "orkutWarning">
+                                Warning : Orkut only accepts scraps with length less that 1024 characters. 
+                                Please change your greeting messages or gift image URL so that it can be used with ORKUT. 
+                                <br/>
+                                To shorten the gift image URls you could use <a href = "http://tinyurl.com">tinyurl.com</a>
+                            </div>
+                            <br/>
+                            <br/>
+                            <div id = "sendMail">
+                                <div align = "center" style ="font-size : 16px; font-weight : bold; color : #AB0104; width : 100%">
+                                    Or send this as an email to your friends &nbsp;&nbsp; 
+                                    <p id = "downloadify">
+                                    </p>
+                                </div>
+                                <div>
+                                    <ol>
+                                        <li>
+                                            Download the file and save it to your computer
+                                        </li>
+                                        <li>
+                                            Attatch it to an email
+                                        </li>
+                                        <li>
+                                            The reciever will see the virtual gift that will open at the specified time
+                                        </li>
+                                    </ol>
+                                </div>
+                                <iframe name = "mailFrame" style ="display:none">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-div">
+                <div id = "aboutus" class= "container-div" align = "center" style ="text-align : center;font-size : 12px;padding : 20px; width : 90%"">
+                    <hr<a href = "infopage.html#about">About Us </a>
+                    | <a href = "mailto:geekstimeout@geekstimeout.com">Feedback </a>
+                    |<a href = "infopage.html#terms">Terms and Conditions </a>
+                    |<a href = "infopage.html#faq">FAQs </a>|<a href = "mailto:geekstimeout@geekstimeout.com">Contact Us</a>
+                </div>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <script type="text/javascript" src="http://yui.yahooapis.com/combo?2.8.0r4/build/yahoo-dom-event/yahoo-dom-event.js&2.8.0r4/build/animation/animation-min.js&2.8.0r4/build/connection/connection-min.js">
+        </script>
+        <script src = "downloadify/js/swfobject.js" type="text/javascript">
+        </script>
+        <script src = "downloadify/js/downloadify.min.js" type="text/javascript">
+        </script>
+        <script src="js/GiftPicker.js" type="text/javascript">
+        </script>
+        <script src="js/ThemePicker.js" type="text/javascript">
+        </script>
+        <script src="js/ScrapsTimeout.js" type="text/javascript">
+        </script>
+        <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+            var pageTracker = _gat._getTracker("UA-617499-7");
+            pageTracker._initData();
+            pageTracker._trackPageview();
+        </script>
+    </body>
+</html>
