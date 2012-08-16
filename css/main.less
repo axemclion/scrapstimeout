@@ -1,8 +1,7 @@
 html {
-    body {background-color:
-        black;
-        color:
-        #333;
+    body {
+    	background-color: black;
+        color: #333;
         background: -webkit-gradient(radial,50% 50%,500,50% 50,40,from(#333),to(#444444));
 		background: -moz-gradient(radial,50% 50%,500,50% 50,40,from(#333),to(#444444));
 		background: -o-gradient(radial,50% 50%,500,50% 50,40,from(#333),to(#444444));
@@ -10,6 +9,7 @@ html {
 		background: gradient(radial,50% 50%,500,50% 50,40,from(#333),to(#444444));
 		margin: 0;
 		padding: 0;
+		overflow: hidden;
 	}
 }
 
@@ -24,6 +24,14 @@ html {
 	-o-transform: @val;
 	-ms-transform: @val;
 	transform: @val;
+}
+
+.transition(@val){
+	-webkit-transition: @val;
+	-moz-transition: @val;
+	-o-transition: @val;
+	-ms-transition: @val;
+	transition: @val;
 }
 
 .decorations{
@@ -120,9 +128,26 @@ html {
 				left:  @vertRibbonLeft;
 				padding: @ribbonWidth 0 0 @ribbonWidth;
 				height: 100 - @horizRibbonTop;
-				width:  95 - @vertRibbonLeft;
+				width:  100 - @vertRibbonLeft;
+				
+				.content-section{
+					padding-right:  @ribbonWidth;
+				}
 			}
 		}
+	}
+}
+
+.ribbon-right{
+	.decorations{
+		.vert-ribbon{
+			left: auto !important;
+			right: @vertRibbonLeft;
+		}
+	}
+	.header, .content{
+		right: 	@vertRibbonLeft;
+		left: auto !important;	
 	}
 }
 
@@ -132,16 +157,17 @@ html {
 	}
 	
 	.content{
-		margin-top: 5%;
+		margin-top: 3%;
 		.gifts{
 			margin: 0% 0 5% 0;
+			height: 20%;
 			img{
-				height: 10%;
 				border: SOLID 1px #CCC;	
 				padding: 1%;
 				background-color: #EEE;
+				height: 100%;
 				&.img1{
-					.transform(rotate(10deg));
+				.transform(rotate(10deg));
 				}
 				&.img2{
 					.transform(rotate(-10deg));
@@ -155,7 +181,17 @@ html {
 				&.img5{
 					.transform(rotate(7deg));
 				}
+				img{
+					height: 100%;
+					width: 100%;
+				}
 			}
+		}
+		
+		.desc{
+			width: 80%;
+			margin: 0 auto;
+			text-align : center;
 		}
 		
 		a.btn {
@@ -209,28 +245,52 @@ html {
 	}
 	
 	.content{
-		#giftCarousel{
-			overflow-x: scroll;
-			overflow-y: visible;
-			.carousel-inner{
-				padding: 1% 0 1% 0;
-				img{
-					border: SOLID 3px #EEE;
-					height: 25%;
-					float: left;
-					cursor: pointer;
-					&:hover{
-						border:SOLID 3px #ABCDEF;
+		.giftSection{
+			height: 35%;
+			padding: 0 15px 0 0;
+			width: 90%; 
+			margin: 0 auto;
+			#giftCarousel{
+				overflow: hidden;
+				margin : 0 0 0 0;
+				height: 100%;
+				.carousel-inner{
+					padding: 0;
+					height: 100%;
+					img{
+						.transform(scale(0.9));
+						.transition(0.3s ease-in-out);
+						height: 100%;
+						float: left;
+						cursor: pointer;
+						&:hover{
+							.transform(scale(1));
+						}
+						&.selected{
+							
+						}
 					}
-					&.selected{
-						border:SOLID 3px #3A87AD;
+				}
+				
+				.controls{
+					.carousel-control{
+						&.left{
+							left: 10px;
+						}
+						&.right{
+							right: 0px;
+						}
 					}
 				}
 			}
 		}
 		
-		.input-append{
-			display: inline;
+		.datetimepicker{
+			width: 80%;
+			margin: 0 auto;
+			.input-append{
+				display: inline;
+			}
 		}
 		.buttons{
 			margin: 3% 0 0 0;
@@ -257,6 +317,14 @@ html {
 		width: 80%;
 		.btn{
 			margin: 5% 0 5% 0;
+		}
+	}
+}
+
+#configure{
+	.decorations{
+		.lid{
+			display: none;
 		}
 	}
 }

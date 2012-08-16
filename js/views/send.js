@@ -47,7 +47,7 @@ STO.Views.send = new (Backbone.View.extend({
                     picture: 'http://www.cornonthejob.com/wp-content/uploads/2011/12/Gift-Box.jpg',
                     name: "Here is a surprise for you !!",
                     caption: STO.giftConfig.get("msg").start,
-                    description: 'Using Dialogs to interact with users.',
+                    description: STO.giftConfig.get("msg").desc,
                     to: STO.giftConfig.get("friend").uid,
 					source: url
                 }, function(response){

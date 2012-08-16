@@ -1,33 +1,32 @@
-<div id = "selectGift">
+<div id = "selectGift" class = "ribbon-right">
     <link href="css/datepicker.css" rel="stylesheet">
     <link href="css/timepicker.css" rel="stylesheet">
     <div class = "header">
         <h1>Select a gift<img class = "giftToFriend" src = "http://profile.ak.fbcdn.net/static-ak/rsrc.php/v2/y9/r/IB7NOFmPw2a.gif"></h1>
     </div>
     <div class = "content">
-        <section>
+        <section class = "giftSection content-section">
             <div id = "giftCarousel" class = "giftCarousel carousel slide">
                 <div class="carousel-inner">
                 </div>
-                <div class = "controls" style ="display:none">
+                <div class = "controls">
                     <a class="carousel-control left" href="#giftCarousel" data-slide="prev">&lsaquo;</a>
                     <a class="carousel-control right" href="#giftCarousel" data-slide="next">&rsaquo;</a>
                 </div>
             </div>
         </section>
-        <section>
+        <section class = "content-section datetimepicker">
             <h4>When should the gift open? </h4>
-            <div clsas = "well">
-                <div class="input-append date" id="open-date" data-date="08-14-2012" data-date-format="mm-dd-yyyy">
-                    <input class="span2" size="16" type="text" value="08-14-2012"><span class="add-on"><i class="icon-th"></i></span>
-                </div>
-                <div class="input-append bootstrap-timepicker-component">
-                    <input class="input-small timepicker-default" id = "open-time" type="text"/><span class="add-on"><i class="icon-time"></i></span>
-                </div>
+            <div class="input-append date" id="open-date" data-date="08-14-2012" data-date-format="mm-dd-yyyy">
+                <input class="span2" size="16" type="text" value="08-14-2012"><span class="add-on"><i class="icon-th"></i></span>
+            </div>
+            <div class="input-append bootstrap-timepicker-component">
+                <input class="input-small timepicker-default" id = "open-time" type="text"/><span class="add-on"><i class="icon-time"></i></span>
             </div>
         </section>
-        <section class = "buttons">
+        <section class = "buttons content-section">
             <a class = "btn pickFriendAgain">&lsaquo;&lsaquo; Select a different friend</a>
+			<a class = "btn moreoptions">More options</a>
             <a class = "btn btn-primary postToFacebook">Post to facebook &rsaquo;&rsaquo; </a>
         </section>
     </div>

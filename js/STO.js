@@ -102,7 +102,7 @@ var STO = (function($){
                             dfd.resolve("selectFriend");
                         }
                         else 
-                            if (stageNum > stage["selectGift"] && !STO.giftConfig.get("gift")) {
+                            if (stageNum !== stage["configure"] && stageNum > stage["selectGift"] && !STO.giftConfig.get("gift")) {
                                 dfd.resolve("selectGift");
                             }
                             else {
@@ -121,8 +121,9 @@ var STO = (function($){
             });
         },
         
-        getDecoration: function(){
-            return $(".decorations.template").clone().removeClass("template").show();
+        getDecoration: function(isRibbonRight){
+            var deco = $(".decorations.template").clone().removeClass("template").show();
+			return deco;
         },
         Views: {},
     }
@@ -141,7 +142,8 @@ STO.giftConfig = new (Backbone.Model.extend({
         },
         msg: {
             start: "",
-            end: ""
+            end: "",
+			desc : ""
         }
     }
 }))();
