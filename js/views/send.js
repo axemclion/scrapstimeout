@@ -23,7 +23,7 @@ STO.Views.send = new (Backbone.View.extend({
                     gh: el.height(),
                     start: model.get("msg").start,
                     end: model.get("msg").end,
-                    y: date.getYear(),
+                    y: date.getFullYear(),
                     m: date.getMonth(),
                     d: date.getDate(),
                     hour: parseInt(time[0], 10) + (time[3] === "PM" ? 12 : 0),

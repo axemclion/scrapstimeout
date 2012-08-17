@@ -39,11 +39,17 @@ STO.Views.selectFriend = new (Backbone.View.extend({
 	onSelectFriend: function(obj){
 		$(".selectedFriend").attr("src", obj.pic_square);
 		$(".dob").html(obj.birthday_date);
-		(obj.birthday_date === null) ? $(".dobContainer").hide() : $(".dobContainer").show();
+		if (obj.birthday_date === null) {
+			$(".dobContainer").hide()
+		} else {
+			var date = obj.birthday_date.split("/")
+			STO.giftConfig.set("date", [date[0], date[1], new Date().getFullYear()].join("/"));
+			$(".dobContainer").show();
+		}
 		STO.giftConfig.set("friend", obj);
 	},
 	events: {
-		"click .selectSelf" : function(){
+		"click .selectSelf": function(){
 			FB.api()
 		},
 		
