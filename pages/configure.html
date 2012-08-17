@@ -1,10 +1,65 @@
-<div id = "configure">
+<div id = "configure" class = "ribbon-right">
     <div class = "header">
-        <h1>More options</h1>
+        <h1>Configure the Gift</h1>
     </div>
     <div class = "content">
-    	
-        <a class = "btn btn-primary done">Done</a>
+        <section class = "options">
+            <form class = "form-horizontal">
+                <fieldset>
+                    <div class = "control-group">
+                        <div class = "input-append">
+                            When should the gift open?
+                        </div>
+                        <div class="input-append date open-date" data-date="08-14-2012" data-date-format="mm-dd-yyyy">
+                            <input class="span2" size="16" type="text" value="08-14-2012"><span class="add-on"><i class="icon-th"></i></span>
+                        </div>
+                        <div class="input-append bootstrap-timepicker-component">
+                            <input class="input-small timepicker-default open-time" type="text"/><span class="add-on"><i class="icon-time"></i></span>
+                        </div>
+                    </div>
+                    <div class = "control-group">
+                        <label class = "control-label" for = "gifturl">
+                            URL of the gift image
+                        </label>
+                        <div class = "controls">
+                            <input type = "text" name = "gifturl" class = "gifturl" placeholder = "Link to the gift image">
+                        </div>
+                    </div>
+                    <div class = "control-group">
+                        <label class = "control-label" for = "beforeMsg">
+                            Message when is closed
+                        </label>
+                        <div class = "controls">
+                            <input type = "text" name = "beforeMsg" class = "beforeMsg" placeholder = "Shown when the gift is not opened">
+                        </div>
+                    </div>
+                    <div class = "control-group">
+                        <label class = "control-label" for = "afterMsg">
+                            Message Gift opens
+                        </label>
+                        <div class = "controls">
+                            <input type = "text" name = "afterMsg" class = "afterMsg" placeholder = "Shown when the user opens the gift">
+                        </div>
+                    </div>
+                    <div class = "control-group">
+                        <label class = "control-label" for = "fbcaption">
+                            Facebook wall caption
+                        </label>
+                        <div class = "controls">
+                            <input type = "text" name = "fbcaption" class = "fbcaption" placeholder = "Message to be displayed on Facebook wall">
+                        </div>
+                    </div>
+                    <div class = "form-actions">
+                        <button class = "btn cancel" type = "submit">
+                            &lsaquo;&lsaquo; Cancel
+                        </button>
+                        <button class = "btn btn-primary submit" type = "submit">
+                            Save and Send
+                        </button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
     </div>
     <script src = "js/views/configure.js" type = "text/javascript">
     </script>

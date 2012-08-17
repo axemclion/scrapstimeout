@@ -299,7 +299,29 @@ html {
 }
 
 #send{
+	.decorations{
+		.horiz-ribbon{
+			top: @vertRibbonLeft;
+		}
+		
+		.lid{
+			display: none;
+		}
+	}
+	
+	.header{
+		height: 10%;
+		h1{
+			margin-top: 0;
+		}
+	}
+	
 	.content{
+		top:20%;
+		height: 80%;
+		.buttons{
+			.transform(scale(1.8));
+		}
 		.swfpreview{
 			margin: 3% 0 3% 0;				
 		}
@@ -322,9 +344,23 @@ html {
 }
 
 #configure{
-	.decorations{
-		.lid{
-			display: none;
+	.content{
+		.options{
+			width: 80%;
+			margin: 2% auto 0 auto;
+			.control-group{
+				margin-bottom: 1%;
+				.control-label{
+					width: 46%;
+					margin: 0 2% 0 0;
+				}
+				.controls{
+					float: left;
+					text-align: left;
+					width: 50%;
+					margin-left: 0px;
+				}
+			}
 		}
 	}
 }

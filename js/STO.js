@@ -10,9 +10,9 @@ var STO = (function($){
         "getStarted": 1,
         "selectFriend": 2,
         "selectGift": 3,
-        "send": 4,
+        "configure": 4,
         "done": 5,
-        "configure": 6
+        "send": 6
     }
     
     function init(){
@@ -123,7 +123,7 @@ var STO = (function($){
         
         getDecoration: function(isRibbonRight){
             var deco = $(".decorations.template").clone().removeClass("template").show();
-			return deco;
+            return deco;
         },
         Views: {},
     }
@@ -131,19 +131,12 @@ var STO = (function($){
 
 STO.giftConfig = new (Backbone.Model.extend({
     defaults: {
-        date: {
-            d: 14,
-            m: 7,
-            y: 2012
-        },
-        time: {
-            hour: 0,
-            min: 0
-        },
+        date: new Date(),
+        time: "10:10",
         msg: {
             start: "",
             end: "",
-			desc : ""
+            desc: ""
         }
     }
 }))();

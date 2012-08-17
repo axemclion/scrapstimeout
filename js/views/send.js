@@ -11,6 +11,8 @@ STO.Views.send = new (Backbone.View.extend({
     getSwfUrl: function(){
         return $.Deferred(function(dfd){
             var model = STO.giftConfig;
+            var date = model.get("date");
+            var time = model.get("time").split(/[:\s]/);
             var me = this;
             var tmpImg = $("<img>").load(function(){
                 var el = $(this);
@@ -21,11 +23,11 @@ STO.Views.send = new (Backbone.View.extend({
                     gh: el.height(),
                     start: model.get("msg").start,
                     end: model.get("msg").end,
-                    y: model.get("date").y,
-                    m: model.get("date").m,
-                    d: model.get("date").d,
-                    hour: model.get("time").hour,
-                    min: model.get("time").min
+                    y: date.getYear(),
+                    m: date.getMonth(),
+                    d: date.getDate(),
+                    hour: parseInt(time[0], 10) + (time[3] === "PM" ? 12 : 0),
+                    min: time[1]
                 };
                 var url = window.location.href;
                 url = url.substring(0, url.lastIndexOf("/")) + "/swf/general.swf?" + $.param(params);
@@ -49,16 +51,16 @@ STO.Views.send = new (Backbone.View.extend({
                     caption: STO.giftConfig.get("msg").start,
                     description: STO.giftConfig.get("msg").desc,
                     to: STO.giftConfig.get("friend").uid,
-					source: url
+                    source: url
                 }, function(response){
                     if (response) {
                         STO.go("done");
                     }
                     else {
-                    	$("#noFBWallPost").modal({
-							backdrop: false,
-							show: true
-						})
+                        $("#noFBWallPost").modal({
+                            backdrop: false,
+                            show: true
+                        })
                     }
                 });
             });
@@ -71,8 +73,8 @@ STO.Views.send = new (Backbone.View.extend({
                 var height = me.$el.find(".content").height();
                 console.log(width, height)
                 me.$el.find(".swfpreview").empty().html(me.template({
-                    "height": (width < height ? width : height) * 0.5,
-                    "width": (width < height ? width : height) * 0.5,
+                    "height": (width < height ? width : height) * 0.7,
+                    "width": (width < height ? width : height) * 0.7,
                     "swf": url
                 }));
             });
