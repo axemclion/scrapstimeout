@@ -1,0 +1,7 @@
+Select Gift - Carousal
+Get cube workign on IE
+Select Friend - Typeahead issues
+Select Friend - Show upcoming birthdays
+Complete DONE page - link to user's wall,  show start over, and blog links
+Check if SWF works
+

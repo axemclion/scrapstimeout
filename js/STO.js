@@ -67,7 +67,6 @@ var STO = (function($){
             "*actions": "defaultRoute"
         },
         defaultRoute: function(loc){
-            console.log("Need to goto ", loc);
             this.checkPreConditions(loc).then(function(action){
                 console.log("Going to " + action);
                 window.location = "#" + action;
@@ -125,6 +124,7 @@ var STO = (function($){
             var deco = $(".decorations.template").clone().removeClass("template").show();
             return deco;
         },
+        
         Views: {},
     }
 }(window.jQuery));
@@ -138,5 +138,9 @@ STO.giftConfig = new (Backbone.Model.extend({
             end: "",
             desc: ""
         }
+    },
+    getDateString: function(){
+        var date = this.get("date")
+        return [date.getMonth() + 1, date.getDate(), date.getFullYear()].join("/");
     }
 }))();
