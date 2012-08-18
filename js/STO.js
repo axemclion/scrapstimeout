@@ -23,7 +23,7 @@ var STO = (function($){
     window.fbAsyncInit = function(){
         FB.init({
             appId: '246040222182849',
-            channelUrl: '//nparashuram.com/tickingsurprises/channel.html', // Channel File
+            channelUrl: '//127.0.0.1.xip.io/scrapstimeout/channel.html', // Channel File
             status: true, // check login status
             cookie: true, // enable cookies to allow the server to access the session
             xfbml: true // parse XFBML
@@ -68,7 +68,7 @@ var STO = (function($){
         },
         defaultRoute: function(loc){
             this.checkPreConditions(loc).then(function(action){
-                console.log("Going to " + action);
+                //console.log("Going to " + action);
                 window.location = "#" + action;
                 var location = stage[action];
                 var url = [Config.staticUrl, "/pages/", action, ".html"].join("");
@@ -125,7 +125,7 @@ var STO = (function($){
             return deco;
         },
         
-        Views: {},
+        Views: {}
     }
 }(window.jQuery));
 
