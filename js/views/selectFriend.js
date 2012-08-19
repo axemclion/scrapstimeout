@@ -39,11 +39,12 @@ STO.Views.selectFriend = new (Backbone.View.extend({
 	onSelectFriend: function(obj){
 		$(".selectedFriend").attr("src", obj.pic_square);
 		$(".dob").html(obj.birthday_date);
+		var date = new Date();
 		if (obj.birthday_date === null) {
+			STO.giftConfig.set("date", date);
 			$(".dobContainer").hide()
 		} else {
 			var dateParts = obj.birthday_date.split("/");
-			var date = new Date();
 			date.setDate(dateParts[1]);
 			date.setMonth(parseInt(dateParts[0], 10) - 1);
 			STO.giftConfig.set("date", date);

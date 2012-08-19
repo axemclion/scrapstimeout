@@ -257,6 +257,7 @@ html {
 				.carousel-inner{
 					padding: 0;
 					height: 100%;
+					position: relative;
 					img{
 						.transform(scale(0.9));
 						.transition(0.3s ease-in-out);
@@ -267,19 +268,23 @@ html {
 							.transform(scale(1));
 						}
 						&.selected{
-							
+							.transform(scale(0.9));
+							border: SOLID 5px #ABCDEF;
+							margin: -5px !important;
 						}
 					}
 				}
-				
-				.controls{
-					.carousel-control{
-						&.left{
-							left: 10px;
-						}
-						&.right{
-							right: 0px;
-						}
+			}
+			.controls{
+				.carousel-control{
+					cursor: pointer;
+					top: 20%;
+					z-index: 10000;
+					&.left{
+						left: 20px;
+					}
+					&.right{
+						right: 20px;
 					}
 				}
 			}

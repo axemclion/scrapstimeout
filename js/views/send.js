@@ -27,7 +27,7 @@ STO.Views.send = new (Backbone.View.extend({
 					y: date.getFullYear(),
 					m: date.getMonth(),
 					d: date.getDate(),
-					hour: parseInt(time[0], 10) + (time[3] === "PM" ? 12 : 0),
+					hour: parseInt(time[0], 10) + (time[2] === "PM" ? 12 : 0),
 					min: time[1]
 				};
 				var url = window.location.href;
@@ -44,13 +44,13 @@ STO.Views.send = new (Backbone.View.extend({
 		},
 		"click .post": function(){
 			var baseurl = window.location.href;
-			baseurl = baseurl.substring(0, url.lastIndexOf("/"));
+			baseurl = baseurl.substring(0, baseurl.lastIndexOf("/"));
 			this.getSwfUrl().then(function(url){
 				FB.ui({
 					method: 'feed',
 					link: url,
 					picture: baseurl + "img/gift.png",
-					name: "Here is a surprise for you !!",
+					name: STO.giftConfig.get("msg").heading,
 					caption: STO.giftConfig.get("msg").start,
 					description: STO.giftConfig.get("msg").desc,
 					to: STO.giftConfig.get("friend").uid,
