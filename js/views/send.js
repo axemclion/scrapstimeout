@@ -68,11 +68,16 @@ STO.Views.send = new (Backbone.View.extend({
 			var template = _.template(this.$el.find("#swfpreviewTemplate").html());
 			window.axe = template;
 			this.getSwfUrl().then(function(swfUrl){
-				var width = me.$el.find(".content").width();
-				var height = me.$el.find(".content").height();
+				var h, w;
+				var width = me.$el.find(".content").width(), height = me.$el.find(".content").height();
+				if (width < height) {
+					h = height * 0.7, w = h * 394 / 228;
+				} else {
+					w = width * 0.7, h = w * 228 / 394;
+				}
 				me.$el.find(".swfpreview").empty().html(template({
-					"height": (width < height ? width : height) * 0.7,
-					"width": (width < height ? width : height) * 0.7,
+					"height": h,
+					"width": w,
 					"swf": swfUrl
 				}));
 			});
