@@ -202,7 +202,7 @@ html {
 
 #selectFriend{
 	.content{
-		margin: 5% 0 0 0;
+		margin: 2% 0 0 0;
 		label{
 			display:inline-block;
 			height: 28px;
@@ -210,19 +210,41 @@ html {
 			margin: 0 3% 0 0;
 		}
 		
-		.selectedFriend{
-			width: 12%;
-			border: SOLID 5px #FFF;
-			margin: 2%;
+		.upcoming-birthdays{
+			overflow: hidden;
+			height: 50px;
+			width: 80%;
+			margin: 0 auto;
+			img{
+				cursor: pointer;
+			}	
 		}
 		
-		.dobContainer{
-			display: none;
+		.selected-friend{
+			margin: 2% auto 1% auto;
+			text-align: left;
+			width: 60%;
+			height: 30%;
+			.friend-img{
+				height: 90%;
+				border: SOLID 5px #FFF;
+				float: left;
+			}
+			
+			.friend-details{
+				float: left;
+				margin: 3% 0 0 3%;
+				font-size: 1.1em;
+				line-height: 1.5em;
+				.dob{
+					display: none;
+				}
+			}
 		}
 		
-		a.btn{
-			margin: 2% 0 0 0;
-		}		
+		.controls{
+			clear: both;
+		}	
 	}
 }
 

@@ -46,7 +46,10 @@ STO.Views.selectGift = new (Backbone.View.extend({
 	
 	events: {
 		"selectGift": function(){
-			this.$el.find(".giftToFriend").attr("src", STO.giftConfig.get("friend").pic_square);
+			var giftToFriend = this.$el.find(".giftToFriend");
+			giftToFriend.attr("src", STO.giftConfig.get("friend").pic_square);
+			giftToFriend.width() > 70 && giftToFriend.width(70);
+			
 			this.$el.find(".open-date").data("date", STO.giftConfig.getDateString()).datepicker('update').find("input").val(STO.giftConfig.getDateString());
 			
 		},

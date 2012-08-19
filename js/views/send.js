@@ -3,9 +3,6 @@ STO.Views.send = new (Backbone.View.extend({
 	el: "#send",
 	initialize: function(){
 		STO.getDecoration().prependTo(this.el);
-		_.templateSettings = {
-			interpolate: /\{\{(.+?)\}\}/g
-		};
 	},
 	
 	getSwfUrl: function(){
