@@ -1,5 +1,3 @@
+Loading for all pages
 Resize SWF to correct size
-Select Friend - Show upcoming birthdays
-Complete DONE page - link to user's wall,  show start over, and blog links
-
 
