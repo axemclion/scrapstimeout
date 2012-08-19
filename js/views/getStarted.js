@@ -23,7 +23,7 @@ STO.Views.getStarted = new (Backbone.View.extend({
 			var me = this;
 			FB.login(function(response){
 				if (response.status === "connected") {
-					me.nextScreen();
+					STO.go("selectFriend");
 				} else {
 					$("#noFbLogin").modal({
 						"backdrop": false,

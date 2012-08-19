@@ -1,6 +1,7 @@
 <div id = "send">
     <div class = "header">
         <h1>Post on facebook wall</h1>
+        <img class = "giftToFriend" src = "http://profile.ak.fbcdn.net/static-ak/rsrc.php/v2/y9/r/IB7NOFmPw2a.gif">
     </div>
     <div class = "content">
         <div class = "swfpreview">
@@ -10,13 +11,13 @@
             <a class = "btn btn-primary post">Send to your friend !</a>
         </div>
     </div>
-    <div class = "swfpreviewTemplate hide">
+    <script type = "text/html" id = "swfpreviewTemplate">
         <object codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="{{ width }}" height="{{ height }}">
             <param name="movie" value="{{ swf }}">
             <embed type="application/x-shockwave-flash" width="{{ width }}" height="{{ height }}" src="{{ swf }}" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer">
             </embed>
         </object>
-    </div>
+    </script>
     <div class="modal fade hide" id="noFBWallPost">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">

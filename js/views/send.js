@@ -6,7 +6,6 @@ STO.Views.send = new (Backbone.View.extend({
 		_.templateSettings = {
 			interpolate: /\{\{(.+?)\}\}/g
 		};
-		this.template = _.template(this.$el.find(".swfpreviewTemplate").html());
 	},
 	
 	getSwfUrl: function(){
@@ -30,8 +29,7 @@ STO.Views.send = new (Backbone.View.extend({
 					hour: parseInt(time[0], 10) + (time[2] === "PM" ? 12 : 0),
 					min: time[1]
 				};
-				var url = window.location.href;
-				url = url.substring(0, url.lastIndexOf("/")) + "/swf/general.swf?" + $.param(params);
+				var url = "https://dl.dropbox.com/u/98924751/general.swf?" + $.param(params);
 				dfd.resolve(url);
 				el.remove();
 			}).attr("src", model.get("gift")).appendTo("body").hide();
@@ -45,16 +43,16 @@ STO.Views.send = new (Backbone.View.extend({
 		"click .post": function(){
 			var baseurl = window.location.href;
 			baseurl = baseurl.substring(0, baseurl.lastIndexOf("/"));
-			this.getSwfUrl().then(function(url){
+			this.getSwfUrl().then(function(swfUrl){
 				FB.ui({
 					method: 'feed',
-					link: url,
-					picture: baseurl + "img/gift.png",
+					link: "http://nparashuram.com/scrapstimeout",
+					picture: "http://nparashuram.com/scrapstimeout/img/gift.png",
 					name: STO.giftConfig.get("msg").heading,
 					caption: STO.giftConfig.get("msg").start,
 					description: STO.giftConfig.get("msg").desc,
 					to: STO.giftConfig.get("friend").uid,
-					source: url
+					source: swfUrl
 				}, function(response){
 					if (response) {
 						STO.go("done");
@@ -70,15 +68,18 @@ STO.Views.send = new (Backbone.View.extend({
 		
 		"send": function(){
 			var me = this;
-			this.getSwfUrl().then(function(url){
+			var template = _.template(this.$el.find("#swfpreviewTemplate").html());
+			window.axe = template;
+			this.getSwfUrl().then(function(swfUrl){
 				var width = me.$el.find(".content").width();
 				var height = me.$el.find(".content").height();
-				me.$el.find(".swfpreview").empty().html(me.template({
+				me.$el.find(".swfpreview").empty().html(template({
 					"height": (width < height ? width : height) * 0.7,
 					"width": (width < height ? width : height) * 0.7,
-					"swf": url
+					"swf": swfUrl
 				}));
 			});
+			this.$el.find(".giftToFriend").attr("src", STO.giftConfig.get("friend").pic_square);
 		}
 	}
 }))();

@@ -309,6 +309,10 @@ html {
 			top: @vertRibbonLeft;
 		}
 		
+		.vert-ribbon{
+			z-index: 1000;
+		}
+		
 		.lid{
 			display: none;
 		}
@@ -318,6 +322,13 @@ html {
 		height: 10%;
 		h1{
 			margin-top: 0;
+		}
+		.giftToFriend{
+			position: absolute;
+			top: -25%;
+			left: 0;
+			.transform(scale(2) rotateZ(-10deg));
+			box-shadow: 2px 2px 7px -1px black;
 		}
 	}
 	
