@@ -26,7 +26,7 @@ STO.Views.send = new (Backbone.View.extend({
 					hour: parseInt(time[0], 10) + (time[2] === "PM" ? 12 : 0),
 					min: time[1]
 				};
-				var url = "https://dl.dropbox.com/u/98924751/general.swf?" + $.param(params);
+				var url = "https://axemclion.appspot.com/general.swf?" + $.param(params);
 				dfd.resolve(url);
 				el.remove();
 			}).attr("src", model.get("gift")).appendTo("body").hide();
